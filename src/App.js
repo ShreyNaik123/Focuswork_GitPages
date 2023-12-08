@@ -133,7 +133,7 @@ function App() {
 	};
 
 	return (
-		<Router>
+		<Router basename={process.env.PUBLIC_URL}>
 			<Fragment>
 				<Routes>
 					<Route path="/backgrounds" element={<Backgrounds />} />

@@ -1,7 +1,8 @@
 {
+	"homepage": "https://shreynaik123.github.io/Focuswork_GitPages",
 	"name": "focuswork",
 	"version": "0.1.0",
-	"private": true,
+	"private": false,
 	"main": "server.js",
 	"proxy": "http://localhost:5000/",
 	"dependencies": {
@@ -42,7 +43,9 @@
 		"eject": "react-scripts eject",
 		"server": "nodemon server",
 		"client": "npm start",
-		"dev": "concurrently \"npm run\tserver\" \"npm run client\""
+		"dev": "concurrently \"npm run\tserver\" \"npm run client\"",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build "
 	},
 	"eslintConfig": {
 		"extends": [
@@ -64,6 +67,7 @@
 	},
 	"devDependencies": {
 		"concurrently": "^8.2.1",
+		"gh-pages": "^6.1.0",
 		"nodemon": "^3.0.1"
 	}
 }
