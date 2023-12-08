@@ -1,0 +1,376 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.content {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+}
+.main_btn {
+	font-size: 50px;
+	color: aliceblue;
+}
+
+.countdown {
+	font-size: 200px;
+	margin: auto;
+	backdrop-filter: blur(5px);
+	border-radius: 10%;
+	padding: 20px;
+	color: aliceblue;
+	border: 8px solid #333;
+}
+
+.submit_btn {
+	color: aliceblue;
+	background-color: gray;
+}
+
+.offcanvas {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+
+.offcanvas.offcanvas-start {
+	border: none;
+	width: fit-content;
+	padding: 30px;
+}
+
+.offcanvas.offcanvas-start.show {
+	width: fit-content;
+	padding: 30px;
+}
+
+.offcanvas > .btn {
+	background-color: aliceblue;
+	color: #333;
+	border: none;
+	width: fit-content;
+	padding: 20px;
+	transition: all 0.3s;
+}
+
+.offcanvas > .btn i {
+	font-size: 20px;
+}
+
+.offcanvas > .btn:hover {
+	background-color: #333;
+	color: #f4f4f3;
+}
+
+.buttons {
+	width: 30%;
+	margin: auto;
+	height: 80px;
+	background-color: #333;
+	border: 1px solid #f4f4f4;
+}
+
+.buttons .parent_btn {
+	background-color: inherit;
+}
+.buttons .parent_btn i {
+	font-size: 40px;
+	color: aliceblue;
+}
+
+.sidebar {
+	z-index: 10;
+	background-color: black;
+	width: fit-content;
+	display: inline-block;
+}
+
+.sidebar > .btn {
+	position: absolute;
+	top: 5%;
+	left: 1%;
+	background: #333;
+	border: none;
+	font-size: 25px;
+	transition: all 0.3s;
+}
+
+.sidebar > .btn:hover {
+	background-color: lightgray;
+	color: #333;
+}
+
+.modal-backdrop {
+	z-index: -1;
+}
+
+.modal-content {
+	background-color: aliceblue;
+	color: black;
+}
+
+.modal-header h1 {
+	width: 100%;
+}
+
+.gallery-image {
+	height: 500px;
+	width: 100%;
+}
+.gallery-image img {
+	height: 100%;
+	width: 100%;
+}
+
+.form_input {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.form_input input {
+	width: 60px;
+}
+
+.time_form {
+	width: 65%;
+	margin: auto;
+}
+
+.modal2 .modal-footer {
+	display: inline;
+}
+
+.quotes_main {
+	width: fit-content;
+
+	margin: auto;
+	background-color: #333;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#liveAlertPlaceholder {
+	position: absolute;
+	top: 1%;
+	left: 74%;
+	margin-right: 10px;
+}
+
+#liveAlertPlaceholder .alert {
+	background: aliceblue;
+	color: #333;
+}
+
+.clock {
+	width: fit-content;
+	background-color: #333;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid lightslategray;
+	padding: 10px;
+	flex: 60%;
+}
+
+.clock h1 {
+	display: inline;
+}
+
+.side_clocks {
+	gap: 10px;
+}
+.sessionsCount {
+	background: #333;
+	color: aliceblue;
+	border-radius: 10px;
+	padding: 0 20px;
+	flex: 40%;
+}
+
+.sessionsCount h1:first-child {
+	border-bottom: 1px solid aliceblue;
+	border-width: 50%;
+}
+
+.sessionsCount h1:last-child {
+	margin-top: -10px;
+}
+
+.side_container {
+	width: fit-content;
+	position: absolute;
+	top: 5%;
+	width: 16%;
+	align-self: end;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.login_container {
+	background: aliceblue;
+}
+
+.todolist {
+	position: relative;
+
+	width: 100%;
+}
+
+.todo_button {
+	color: aliceblue;
+	background-color: #333;
+}
+
+.todo_button.collapsed {
+	color: aliceblue;
+	background-color: #333;
+}
+
+.todo_button:focus {
+	color: aliceblue;
+	background-color: #333;
+}
+
+.todo_button:not(.collapsed) {
+	color: aliceblue !important;
+	background-color: #333 !important;
+}
+
+.todo_item_group {
+	list-style: none;
+}
+
+.new-item-form {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+}
+.new-item-form .form-row {
+	width: 100%;
+}
+
+.new-item-form .form-row input {
+	width: 99%;
+}
+
+.new-item-form button {
+	color: aliceblue;
+	background-color: #333;
+	padding: 5px;
+}
+
+.modal2 .modal-body {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* .modal2 .new-item-form {
+	border-bottom: 1px solid #333;
+} */
+
+.modal2 .modal-body li {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.modal2 .modal-body li label {
+	width: 100%;
+	text-align: left;
+	padding: 10px;
+}
+
+.accordion-body .todo_item_group {
+	padding: 0px;
+	margin: 0px;
+}
+
+.accordion-body .todo_item_group li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+.accordion-body .todo_item_group li label {
+	width: 100%;
+	text-align: left;
+	margin-left: 15px;
+}
+
+.accordion-body .todo_item_group button {
+	font-size: small;
+}
+
+.modal4 .modal-content .modal-footer button {
+	background-color: aliceblue;
+	color: #333;
+	border: 1px solid #333;
+	margin: auto;
+}
+
+.modal4 .modal-content .modal-footer button:hover {
+	background-color: #333;
+	color: aliceblue;
+}
+
+.todolist .accordion-item,
+.clock,
+.sessionsCount {
+	border: 1px solid #f4f4f4;
+}
+.sidebar .sidebar_toggler {
+	border: 1px solid #f4f4f4;
+}
+
+.todo_item {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.todo_item label {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 10px;
+}
+
+.login_image {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.svg_container {
+	height: 490px;
+	padding: 48px;
+	width: 590px;
+	margin-top: 80px;
+}
+
+.login_page {
+	justify-content: center;
+	align-items: center;
+	background-color: #f2f2f2;
+	height: 100vh;
+}
+
+.login_form {
+	/* border: 0.5px #333 solid; */
+	padding: 70px;
+	background-color: white;
+	border-radius: 10px;
+}
