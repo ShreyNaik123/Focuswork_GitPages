@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useTimer } from "react-timer-hook";
 import Timer from "./components/Timer/Timer";
 import Backgrounds from "./components/Sidebar/Background";
+import { Helmet } from "react-helmet";
 
 function App() {
 	const expiryTimestamp = new Date();
@@ -135,6 +136,32 @@ function App() {
 	return (
 		<Router basename={process.env.PUBLIC_URL}>
 			<Fragment>
+				<Helmet>
+					{currentState === "Not Running" ? (
+						<title>FocusWork</title>
+					) : (
+						<title>
+							{currentState === "Running"
+								? " Focus : "
+								: currentState === "Break"
+								? " Break : "
+								: ""}
+							{`${hours > 0 ? hours : ""}`}
+							{`${
+								minutes.toString().length > 1
+									? minutes
+									: `0${minutes.toString()}`
+							}`}
+							:
+							{`${
+								seconds.toString().length > 1
+									? seconds
+									: `0${seconds.toString()}`
+							}`}
+						</title>
+					)}
+				</Helmet>
+
 				<Routes>
 					<Route path="/backgrounds" element={<Backgrounds />} />
 					<Route
