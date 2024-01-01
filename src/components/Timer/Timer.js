@@ -4,9 +4,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Clock from "./Clock";
 import SessionCount from "./SessionCount";
 import { TodoList } from "../Todo/TodoList";
-import Lofi from "../Lofi/Lofi";
 import mp3_file from "../../media/sounds/door_bell.mp3";
-import { connect } from "react-redux";
 
 function Timer({
 	sessionTime,
@@ -41,6 +39,10 @@ function Timer({
 	todos,
 	toggleTodo,
 	deleteTodo,
+	stats,
+	setStats,
+	data,
+	setData,
 }) {
 	const { background } = useBackground();
 
@@ -174,6 +176,10 @@ function Timer({
 				toggleTodo={toggleTodo}
 				deleteTodo={deleteTodo}
 				sessions={sessions - 1}
+				stats={stats}
+				setStats={setStats}
+				data={data}
+				setData={setData}
 			/>
 			<div className="countdown">
 				<span>{hours > 0 ? hours : null}</span>

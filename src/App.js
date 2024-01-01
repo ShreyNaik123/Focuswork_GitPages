@@ -27,6 +27,15 @@ function App() {
 	const [alertMsg, setAlertMsg] = useState("");
 	const [sessionGoal, setSessionGoal] = useState(0);
 	const [sessionEnabled, setSessionEnabled] = useState(true);
+	const [stats, setStats] = useState({
+		completed_sessions: 0,
+		time_today: 0,
+		tasks_done: 0,
+	});
+	const [data, setData] = useState({
+		name: "",
+		studying: "",
+	});
 	const sessionEndSoundRef = useRef(null);
 	// TODOS
 	const [todos, setTodos] = useState(() => {
@@ -200,6 +209,10 @@ function App() {
 								todos={todos}
 								toggleTodo={toggleTodo}
 								deleteTodo={deleteTodo}
+								stats={stats}
+								setStats={setStats}
+								data={data}
+								setData={setData}
 							/>
 						}
 					/>
