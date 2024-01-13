@@ -5,6 +5,7 @@ import Backgrounds from "./Background";
 import { useBackground } from "./BackgroundProvider";
 import { TodoList } from "../Todo/TodoList";
 import AddTodo from "../Todo/AddTodo";
+import Stats from "../Stats/Stats";
 
 const Sidebar = ({
 	updateSessionTime,
@@ -30,14 +31,13 @@ const Sidebar = ({
 	setStats,
 	data,
 	setData,
+	sessions,
 }) => {
 	const { setBackground } = useBackground();
 	const handleWallpaperChange = async () => {
 		await new Promise((resolve) => setTimeout(resolve, 1000));
 		setBackground(currentWallpaper + 1);
 	};
-
-	const onChange = (e) => setData({ ...data, [e.target.name]: e.target.value });
 
 	return (
 		<div className="sidebar">
@@ -140,11 +140,6 @@ const Sidebar = ({
 							</div>
 							<div className="modal-body">
 								<AddTodo onSubmit={addTodo} />
-								<TodoList
-									todos={todos}
-									toggleTodo={toggleTodo}
-									deleteTodo={deleteTodo}
-								/>
 							</div>
 						</div>
 					</div>
@@ -152,6 +147,7 @@ const Sidebar = ({
 				{/* Modal 2 End */}
 
 				{/* Modal 3 */}
+				{/* Stats Modal */}
 				<button
 					type="button"
 					className="btn btn-primary"
@@ -178,45 +174,17 @@ const Sidebar = ({
 								></button>
 							</div>
 							<div className="modal-body">
-								<div>
-									Name : {data.name} <br />
-									Studying: {data.studying} <br />
-									Sessions Today : {stats.completed_sessions} <br />
-									Time Studied : {stats.time_today}
-									<br />
-									Tasks Done : {stats.tasks_done}
-								</div>
-
-								<div class="dropdown">
-									<button
-										class="btn btn-secondary dropdown-toggle"
-										type="button"
-										data-bs-toggle="dropdown"
-										aria-expanded="false"
-									>
-										Update Info
-									</button>
-									<div className="dropdown-menu">
-										<label className="dropdown-item">Set Name</label>
-										<input
-											type="text"
-											id="name"
-											placeholder="Name"
-											name="name"
-											onChange={(e) => onChange(e)}
-											className="dropdown-item"
-										></input>
-										<label>Studying</label>
-										<input
-											type="text"
-											id="studying"
-											placeholder="Studying"
-											name="studying"
-											onChange={(e) => onChange(e)}
-											className="dropdown-item"
-										></input>
-									</div>
-								</div>
+								<Stats
+									data={data}
+									stats={stats}
+									setData={setData}
+									sessions={sessions}
+									sessionGoal={sessionGoal}
+									sessionTime={sessionTime}
+									todos={todos}
+									toggleTodo={toggleTodo}
+									deleteTodo={deleteTodo}
+								/>
 							</div>
 						</div>
 					</div>

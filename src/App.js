@@ -30,7 +30,6 @@ function App() {
 	const [stats, setStats] = useState({
 		completed_sessions: 0,
 		time_today: 0,
-		tasks_done: 0,
 	});
 	const [data, setData] = useState({
 		name: "",

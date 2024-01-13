@@ -125,7 +125,7 @@ function Timer({
 								class="accordion-collapse collapse show"
 								data-bs-parent="#accordionExample"
 							>
-								<div class="accordion-body">
+								<div class="accordion-body" style={{ padding: 0 }}>
 									<TodoList
 										todos={todos}
 										toggleTodo={toggleTodo}
