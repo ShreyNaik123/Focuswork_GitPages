@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function UserStats({ sessions, sessionTime }) {
 	function convertTime(seconds) {
 		if (seconds >= 3600) {
@@ -11,7 +13,7 @@ export default function UserStats({ sessions, sessionTime }) {
 	}
 
 	const stats = [
-		{ id: 1, name: "\nSessions Today", value: sessions },
+		{ id: 1, name: "Sessions Today", value: sessions },
 		{
 			id: 2,
 			name: `Minutes\nTime Focused Today`,
@@ -21,30 +23,26 @@ export default function UserStats({ sessions, sessionTime }) {
 		},
 	];
 
-	// Find the maximum length of the stat values
-	const maxLength = Math.max(...stats.map((stat) => stat.value.length));
-
 	return (
-		<div className="bg-white py-16 sm:py-32">
-			<div className="mx-auto max-w-7xl px-6 lg:px-8">
-				<dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-2">
+		<div className="bg-white py-5 w-100">
+			<div className="container">
+				<div className="row justify-content-center">
 					{stats.map((stat) => (
-						<div
-							key={stat.id}
-							className="mx-auto flex max-w-xs flex-col gap-y-4"
-						>
-							<dt className="whitespace-pre-line text-base leading-7 text-gray-600">
-								{stat.name}
-							</dt>
-							<dd
-								className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
-								style={{ width: `${maxLength}ch` }}
-							>
-								{stat.value}
-							</dd>
+						<div key={stat.id} className="col-md-6 my-3">
+							<dl className="text-center">
+								<dd
+									className="text-3xl font-weight-bold text-gray-900"
+									style={{ fontSize: "xxx-large" }}
+								>
+									{stat.value}
+								</dd>
+								<dt style={{ whiteSpace: "pre-line", color: "#6B7280" }}>
+									{stat.name}
+								</dt>
+							</dl>
 						</div>
 					))}
-				</dl>
+				</div>
 			</div>
 		</div>
 	);
