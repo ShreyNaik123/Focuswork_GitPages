@@ -6,7 +6,9 @@ export default function UserStats({ sessions, sessionTime }) {
 		{
 			id: 2,
 			name: `Minutes\nTime Focused Today`,
-			value: sessions ? sessions * sessionTime : sessionTime,
+			value: sessions
+				? parseInt((sessions * sessionTime) / 60)
+				: parseInt(sessionTime),
 		},
 	];
 
