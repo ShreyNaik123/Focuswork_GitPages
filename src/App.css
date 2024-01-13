@@ -433,9 +433,9 @@ html {
 .stats-date {
 	position: absolute;
 	top: 10px;
-	left: 30px;
 	font-size: 16px;
 	font-weight: bold;
+	font-size: 1.5rem;
 }
 
 .stats-body {

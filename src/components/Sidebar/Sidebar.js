@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SetTimer from "./SetTimer";
 import Backgrounds from "./Background";
 import { useBackground } from "./BackgroundProvider";
-import { TodoList } from "../Todo/TodoList";
+import pomuGif from "../../media/loader/pomu-jam.gif";
 import AddTodo from "../Todo/AddTodo";
 import Stats from "../Stats/Stats";
 
@@ -33,9 +33,12 @@ const Sidebar = ({
 	setData,
 	sessions,
 }) => {
+	const [loading, setLoading] = useState(false);
 	const { setBackground } = useBackground();
 	const handleWallpaperChange = async () => {
-		await new Promise((resolve) => setTimeout(resolve, 1000));
+		setLoading(true);
+		await new Promise((resolve) => setTimeout(resolve, 1500));
+		setLoading(false);
 		setBackground(currentWallpaper + 1);
 	};
 
@@ -202,7 +205,14 @@ const Sidebar = ({
 				>
 					<i className="bi bi-card-image"></i>
 				</button>
+				{/* gif?? */}
+				{loading && (
+					<div className="loading-overlay">
+						<img src={pomuGif} alt="loading" />
+					</div>
+				)}
 
+				{/* gif??? */}
 				<div
 					className="modal fade modal-lg modal4"
 					id="exampleModal4"

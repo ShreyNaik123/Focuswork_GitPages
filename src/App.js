@@ -17,6 +17,15 @@ function App() {
 			},
 		});
 
+	const today = new Date();
+
+	const year = today.getFullYear();
+	const month = today.getMonth() + 1;
+	const day = today.getDate();
+
+	const formattedDate = `${day.toString().padStart(2, "0")}/${month
+		.toString()
+		.padStart(2, "0")}/${year}`;
 	const [sessionTime, updateSessionTime] = useState(0);
 	const [currentState, updateCurrentState] = useState("Not Running");
 	const [breakTime, updateBreakTime] = useState(600);
@@ -37,6 +46,7 @@ function App() {
 	});
 	const sessionEndSoundRef = useRef(null);
 	// TODOS
+
 	const [todos, setTodos] = useState(() => {
 		const localValue = localStorage.getItem("ITEMS");
 		if (localValue == null) return [];
@@ -110,7 +120,6 @@ function App() {
 
 	const onEnd = async (type = "None") => {
 		await new Promise((resolve) => setTimeout(resolve, 0));
-
 		if (currentState === "Running") {
 			// if (type !== "Skip") {
 			updateSessionCounter(sessions + 1);
