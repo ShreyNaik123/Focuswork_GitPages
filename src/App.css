@@ -489,3 +489,43 @@ html {
 		font-size: 10px;
 	}
 }
+
+@media screen and (max-width: 425px) {
+	.countdown {
+		width: 80%;
+		font-size: 100px;
+		height: 30%;
+		margin-top: 11rem;
+	}
+
+	.buttons {
+		width: 80%;
+		margin-bottom: 50%;
+	}
+
+	.side_container {
+		left: 15%;
+		top: 4%;
+		/* background-color: red; */
+		width: 85%;
+		height: 100px;
+		flex-direction: row-reverse;
+	}
+
+	.todolist {
+		display: none;
+	}
+
+	.clock,
+	.sessionsCount {
+		height: 55px;
+	}
+
+	.clock h1,
+	.sessionsCount h1 {
+		font-size: 20px;
+	}
+	.clock h5 {
+		font-size: 10px;
+	}
+}
