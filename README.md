@@ -1,5 +1,7 @@
 # Focuswork
 
+<a href="https://shreynaik123.github.io/Focuswork_GitPages/">Link to website</a>
+
 <p align="center"><img src="https://github.com/ShreyNaik123/Focuswork/assets/61283238/0c73f644-e5b2-4e8a-b210-5b81e412c808" width="250" height="250"></p>
 
 
